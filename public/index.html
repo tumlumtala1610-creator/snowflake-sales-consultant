@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ed"><title>Sales Consultant · Snowflake</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><a class="brand" href="/"><span class="brand-mark">S</span><span>FIELDNOTE <i> / SALES INTELLIGENCE</i></span></a><span id="connection" class="connection"><b></b> Checking Snowflake…</span></header>
+    <section class="hero"><div><p class="eyebrow">YOUR BUSINESS, AFTER THE CROWD GOES HOME</p><h1>Make the next sale<br><em>smarter.</em></h1><p class="lede">Import this session’s sales. Get a clear read on what sold, what it means, and what to test next.</p></div>
+      <div class="upload-card"><label for="csv-file" class="eyebrow">01 / SALES DATA</label><input id="csv-file" type="file" accept=".csv,text/csv"><p id="file-status">Upload a sales CSV to start. No sample sales are preloaded.</p><a href="/sales-template.csv" download>Download empty CSV template ↗</a></div>
+    </section>
+    <section id="insights" class="insights" hidden>
+      <div class="section-heading"><div><p class="eyebrow">02 / THE SESSION</p><h2 id="session-title">Sales snapshot</h2></div><span id="date-range" class="date-range"></span></div>
+      <div class="metric-grid">
+        <article class="metric"><span>Revenue</span><strong id="revenue">—</strong><small id="orders">—</small></article>
+        <article class="metric"><span>Units sold</span><strong id="units">—</strong><small id="aov">—</small></article>
+        <article class="metric"><span>Units under $50</span><strong id="under50">—</strong><small id="under50-share">—</small></article>
+        <article class="metric"><span>Gross profit</span><strong id="profit">—</strong><small id="margin">—</small></article>
+      </div>
+      <div class="data-grid"><article class="data-card"><h3>Revenue by category</h3><div id="categories" class="rank-list"></div></article><article class="data-card"><h3>Products that sold</h3><div id="products" class="rank-list"></div></article></div>
+      <p id="data-note" class="data-note"></p>
+    </section>
+    <section class="consultant" id="consultant">
+      <div class="section-heading"><div><p class="eyebrow">03 / ASK YOUR CONSULTANT</p><h2>What should I learn from this sale?</h2></div><span class="powered">SNOWFLAKE CORTEX</span></div>
+      <div class="suggestions"><button type="button" data-prompt="What went well and what should I improve for the next sale? Use the strongest evidence in the data.">What should I improve?</button><button type="button" data-prompt="Which products and categories drove revenue? Show the shares and explain any caveats.">What actually sold?</button><button type="button" data-prompt="What should I research in the market before buying inventory again? Separate what sales data proves from what needs external research.">What should I research?</button></div>
+      <div id="chat-log" class="chat-log" aria-live="polite"><div class="welcome"><span class="assistant-mark">S</span><p>Upload a sales CSV, then ask me what happened. I’ll cite the numbers and flag what the data can’t tell us.</p></div></div>
+      <form id="chat-form" class="chat-form"><textarea id="question" rows="2" maxlength="3000" placeholder="Ask about this sales session…" disabled required></textarea><button id="send" type="submit" disabled>Ask consultant <span>↗</span></button></form>
+      <p class="fineprint">This prototype analyzes your uploaded sales only. It has no live fashion-trend feed; current-trend claims need dated external sources.</p>
+    </section>
+    <footer>FIELDNOTE · A standalone project for Bazaarly integration</footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
